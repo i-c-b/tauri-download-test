@@ -5,8 +5,8 @@ let jsMsgEl: HTMLElement | null;
 
 async function downloadJs() {
   if (jsMsgEl && urlInputEl) {
-    download(urlInputEl.value, "./download.txt", (progress) => {
-      (jsMsgEl as HTMLElement).textContent = `Downloaded: ${progress}`;
+    download(urlInputEl.value, "./download.txt", (progress, total) => {
+      (jsMsgEl as HTMLElement).textContent = `Downloaded: ${progress} of ${total}`;
     });
   }
 }
